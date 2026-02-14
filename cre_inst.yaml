@@ -8,7 +8,7 @@
     security: sg-07a628098640c0e6c
     instancetype: t3.micro
     instances:
-    - mongo
+    - mongodb
     - catlogue
 
   tasks:
@@ -21,7 +21,7 @@
       tags:
         Proj: roboshop
         comp: "{{ item }}"
-        Name: "{{ item }} - {{ env }}"
+        Name: "{{ item }}-{{ env }}"
     loop: "{{ instances }}"
     register: output
 

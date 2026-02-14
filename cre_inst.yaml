@@ -17,7 +17,7 @@
       aminame: "{{ ami }}"
       secuname: "{{ security }}"
       instancs: "{{ instancetype }}"
-      name: "{{ item }} - {{ env }}"
+      name: "{{ item }}-{{ env }}"
       tags:
         Proj: roboshop
         comp: "{{ item }}"

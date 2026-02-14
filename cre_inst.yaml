@@ -34,13 +34,13 @@
 
   - name: adding route53
     amazon.aws.route53:
-    state: present
-    zone: "{{ mreddy.online }}"
-    record: "{{ item.item }}"
-    type: A
-    ttl: 1
-    value: "{{ item.instance[0].private_ip_address }}"
-    wait: true
+      state: present
+      zone: "{{ mreddy.online }}"
+      record: "{{ item.item }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instance[0].private_ip_address }}"
+      wait: true
 
     loop: "{{ output.result }}"
   

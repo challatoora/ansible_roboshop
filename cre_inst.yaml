@@ -35,7 +35,7 @@
   - name: adding route53
     amazon.aws.route53:
       state: present
-      zone: "{{ mreddy.online }}"
+      zone: "{{ domain_name }}"
       record: "{{ item.item }}"
       type: A
       ttl: 1

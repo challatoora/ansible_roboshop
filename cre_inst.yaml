@@ -7,6 +7,7 @@
     ami: ami-0220d79f3f480ecf5
     security: sg-07a628098640c0e6c
     instancetype: t3.micro
+    domain_name: mreddy.online
   
     instances:
     - mongodb
@@ -30,6 +31,18 @@
   - name: print the output
     ansible.builtin.debug:
       msg: "{{ output }}"
+
+  - name: adding route53
+    amazon.aws.route53:
+    state: present
+    zone: "{{ mreddy.online }}"
+    record: "{{ item.item }}"
+    type: A
+    ttl: 1
+    value: "{{ item.instance[0].private_ip_address }}"
+    wait: true
+
+    loop: "{{ output.result }}"
   
 
 

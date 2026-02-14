@@ -1,5 +1,5 @@
 - name: creating instance 
-  hosts: local
+  hosts: all
   connection: local
   become: yes
   vars:

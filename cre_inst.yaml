@@ -27,7 +27,7 @@
 
   - name: printing the output
     ansible.builtin.debug:
-      msgs: the output of this  script is    {{ output }}
+      msgs: the output of this  script is    "{{ output }}"
   
 
 

@@ -1,0 +1,33 @@
+- name: creating instance 
+  hosts: local
+  connection: local
+  become: yes
+  vars:
+    env: dev
+    ami: ami-0220d79f3f480ecf5
+    security: sg-07a628098640c0e6c
+    instancetype: t3.micro
+    instances:
+    - mongo
+    - catlogue
+
+  tasks:
+  - name : instance creating
+    amazon.aws.ec2_instance:
+      aminame: "{{ ami }}"
+      secuname: "{{ security }}"
+      instancs: "{{ instancetype }}"
+      name: "{{ item }} - {{ env }}"
+      tags:
+        Proj: roboshop
+        comp: "{{ item }}"
+        Name: "{{ item }} - {{ env }}"
+    loop: "{{ instances }}"
+    register: output
+
+  - name: printing the output
+    ansible.builtin.debug:
+      msgs: the output of this  script is    {{ output }}
+  
+
+

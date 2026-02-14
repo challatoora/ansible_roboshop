@@ -1,7 +1,7 @@
 - name: creating instance 
   hosts: all
   connection: local
-  become: yes
+  #become: yes
   vars:
     env: dev
     ami: ami-0220d79f3f480ecf5

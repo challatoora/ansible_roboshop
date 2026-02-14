@@ -10,7 +10,6 @@
   
     instances:
     - mongodb
-    - catlogue
 
   tasks:
   - name : instance creating

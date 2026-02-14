@@ -14,9 +14,9 @@
   tasks:
   - name : instance creating
     amazon.aws.ec2_instance:
-      aminame: "{{ ami }}"
-      secuname: "{{ security }}"
-      instancs: "{{ instancetype }}"
+      image_id: "{{ ami }}"
+      security_group: "{{ security }}"
+      instance_type: "{{ instancetype }}"
       name: "{{ item }}-{{ env }}"
       tags:
         Proj: roboshop

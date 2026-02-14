@@ -12,6 +12,7 @@
     instances:
     - mongodb
     - catlogue
+    - frontend
 
   tasks:
   - name : instance creating

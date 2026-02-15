@@ -60,5 +60,5 @@
     register: catalogue_output
 
   - name : print
-    ansible,builtin.debug:
+    ansible.builtin.debug:
       msg : "{{ catalogue_output }}"

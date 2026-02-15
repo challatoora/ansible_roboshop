@@ -13,6 +13,7 @@
     - mongodb
     - catlogue
     - frontend
+    - redis
 
   tasks:
   - name : instance creating

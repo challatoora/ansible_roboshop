@@ -17,7 +17,6 @@
       name: roboshop system user
       home: /app
       shell: /sbin/nologin
-      comment: roboshop
 
   - name: deleting the app
     ansible.builtin.file:

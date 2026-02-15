@@ -45,15 +45,15 @@
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
 
-  - name  : install install mongodb-mongosh 
-    ansible.builtin.package:
-      name: mongodb-mongosh 
-      state: present   
-
   - name: copying mongodb
     ansible.builtin.copy:
       src: mongo.repo
       dest: /etc/yum.repos.d/mongo.repo  
+
+  - name  : install install mongodb-mongosh 
+    ansible.builtin.package:
+      name: mongodb-mongosh 
+      state: present 
 
   - name : loaded
     ansible.builtin.command: mongosh --host "{{ MONGODB_HOST }}" --quiet  --eval 'db.getMongo().getDBNames().indexOf("catalogue")')

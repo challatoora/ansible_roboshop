@@ -10,7 +10,7 @@
 
     - name: mysql stared 
       ansible.builtin.service:
-        name: mysql
+        name: mysqld
         state: restarted
         enabled: yes
 

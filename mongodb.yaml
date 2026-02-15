@@ -1,0 +1,27 @@
+- name: mongodb ec2
+  hosts: mongodb
+  become: yes
+  
+  tasks:
+  - name: copying mongodb
+    ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+  - name: installing mongodb
+    ansible.builtin.package:
+      name: mongodb
+      state: presnt
+   
+
+  - name: Replace old and add new
+    ansible.builtin.replace:
+      path: /etc/mongod.conf
+      regexp: '127.0.0.1'
+      replace: '0.0.0.0'
+
+  - name: mongodb stared 
+    ansible.builtin.service:
+      name: mongodb
+      state: started
+      enabled: yes

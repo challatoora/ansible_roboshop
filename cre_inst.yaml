@@ -14,6 +14,8 @@
     - catlogue
     - frontend
     - redis
+    - user
+    - cart 
 
   tasks:
   - name : instance creating

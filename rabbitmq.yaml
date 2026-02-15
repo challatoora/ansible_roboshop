@@ -6,7 +6,7 @@
    -  name: copy repo
       ansible.builtin.copy:
         src: rabbitmq.repo
-        path: etc/yum.repos.d/rabbitmq.repo
+        dest: etc/yum.repos.d/rabbitmq.repo
 
    -  name: installing rabbitmq-server
       ansible.builtin.package:

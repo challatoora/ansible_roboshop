@@ -58,7 +58,7 @@
     
   - name: copy paymeny service
     ansible.builtin.copy:
-      src: payament.service
+      src: payment.service
       dest: /etc/systemd/system/payment.service
 
   - name: daemon reload

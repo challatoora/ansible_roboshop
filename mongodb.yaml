@@ -1,7 +1,6 @@
 - name: mongodb ec2
   hosts: mongodb
   become: yes
-  
   tasks:
   - name: copying mongodb
     ansible.builtin.copy:
@@ -10,7 +9,7 @@
 
   - name: installing mongodb
     ansible.builtin.package:
-      name: mongodb
+      name: mongodb-org
       state: presnt
    
 
@@ -22,6 +21,6 @@
 
   - name: mongodb stared 
     ansible.builtin.service:
-      name: mongodb
+      name: mongod
       state: restarted
       enabled: yes

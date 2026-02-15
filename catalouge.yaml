@@ -58,7 +58,7 @@
   - name : loaded
     ansible.builtin.command: mongosh --host "{{ MONGODB_HOST }}" --quiet  --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
     register: catalogue_output
-    remote_src: yes
+  
 
   - name : print
     ansible.builtin.debug:

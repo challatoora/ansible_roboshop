@@ -16,7 +16,7 @@
     - name: reddis stared 
       ansible.builtin.service:
         name: rabbitmq-server
-        state: restarted
+        state: started
         enabled: yes  
 
    -  name: reate user

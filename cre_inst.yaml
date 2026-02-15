@@ -19,6 +19,7 @@
     - mysql
     - payment
     - shipping
+    - rabbitmq
 
   tasks:
   - name : instance creating

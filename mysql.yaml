@@ -5,7 +5,7 @@
   tasks:
     - name: intsall my sql
       ansible.builtin.package:
-        name: mysql
+        name: mysql-server
         state: present
 
     - name: mysql stared 

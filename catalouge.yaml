@@ -1,5 +1,5 @@
 - name : installing catlogue
-  host: catlogue
+  hosts: catlogue
   become: yes
 
   tasks:

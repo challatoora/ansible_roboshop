@@ -16,6 +16,9 @@
     - redis
     - user
     - cart 
+    - mysql
+    - payment
+    - shipping
 
   tasks:
   - name : instance creating

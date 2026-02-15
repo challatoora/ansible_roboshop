@@ -62,3 +62,6 @@
   - name : print
     ansible.builtin.debug:
       msg : "{{ catalogue_output }}"
+
+  - name: loadading the data into db
+    ansible.builtin.shell: mongosh --host "{{ MONGODB_HOST }}" </app/db/master-data.js
